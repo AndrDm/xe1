@@ -1,0 +1,36 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell", // run this from anywhere in project without a c/c++ file having focus
+			"label": "C/C++: cl.exe build simple-shared-library", //change the task name to something meaningful
+			"command": "cl.exe",
+			"args": [
+				"/I", "include",
+				"/I", "C:\\Program Files (x86)\\National Instruments\\Vision\\Include",
+				"/I", "C:\\Program Files\\National Instruments\\LabVIEW 2023\\cintools",
+				"/O2",
+				"/EHsc", //the compiler assumes that functions declared as extern "C" never throw a C++ exception
+				"/LD", // this flag means output a dll not an executable
+				"/Fe:", "build/OpenCVWrapper.dll",
+				"OpenCVWrapper.cpp",
+				"lib\\opencv_world470.lib",
+				"C:\\Program Files (x86)\\National Instruments\\Vision\\Lib\\MSVC64\\nivision.lib",
+				"C:\\Program Files\\National Instruments\\LabVIEW 2023\\cintools\\labview.lib",
+				"lib\\NIVisSvc.lib",
+				"user32.lib" //this one need for __imp_MessageBoxA
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Build simple-shared-library dll"
+		}
+	]
+}
