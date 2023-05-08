@@ -14,7 +14,9 @@
 #include "nivision.h"
 		
 typedef uintptr_t NIImageHandle;
+
 extern "C" int LV_LVDTToGRImage(NIImageHandle niImageHandle, void *image);
+extern "C" int LV_SetThreadCore(int NumThreads);
 
 #define U8	0x1
 #define U16 	0x2

@@ -8,7 +8,7 @@ using namespace cv;
 using namespace std;
 
 extern "C" __declspec(dllexport) void opencv2PyrDown(
-		const void *SrcImage, void *DstImage,
+		NIImageHandle SrcImage, NIImageHandle DstImage,
 		LVErrorCluster *ErrorCluster)
 {
 	Image *ImgSrc, *ImgDst;
@@ -20,10 +20,9 @@ extern "C" __declspec(dllexport) void opencv2PyrDown(
 	LV_IS_NOT_IMAGE(SrcImage, ErrorCluster);
 	LV_IS_NOT_IMAGE(DstImage, ErrorCluster);
 
-	//LV_LVDTToGRImage(SrcImage, &ImgSrc); //Using LV_LVDTToGRImage with NIImageHandle is more elegant, 
-	//LV_LVDTToGRImage(DstImage, &ImgDst); //but doesn't work for me at this moment.
-	ImgSrc = ADV_LVDTToAddress(SrcImage);
-	ImgDst = ADV_LVDTToAddress(DstImage);
+	LV_SetThreadCore(1); //must be called prior to LV_LVDTToGRImage
+	LV_LVDTToGRImage(SrcImage, &ImgSrc);
+	LV_LVDTToGRImage(DstImage, &ImgDst);
 
 	LV_IS_NOT_IMAGE(ImgDst, ErrorCluster);
 	LV_IS_NOT_IMAGE(ImgSrc, ErrorCluster);
@@ -59,11 +58,10 @@ extern "C" __declspec(dllexport) void opencv2PyrDown(
 
 	// apply the algorithm
 	pyrDown(src, dst, Size(LVWidth/2, LVHeight/2));
-}
+} //opencv2PyrDown
 
 extern "C" __declspec(dllexport) void opencv2PyrUp(
-		//const NIImageHandle SrcImage, NIImageHandle DstImage, //Dst is double size as Src
-		const void *SrcImage, void *DstImage,
+		const NIImageHandle SrcImage, NIImageHandle DstImage, //Dst is double size as Src
 		LVErrorCluster *ErrorCluster)
 {
 	Image *ImgSrc, *ImgDst;
@@ -75,8 +73,9 @@ extern "C" __declspec(dllexport) void opencv2PyrUp(
 	LV_IS_NOT_IMAGE(SrcImage, ErrorCluster);
 	LV_IS_NOT_IMAGE(DstImage, ErrorCluster);
 
-	ImgSrc = ADV_LVDTToAddress(SrcImage);
-	ImgDst = ADV_LVDTToAddress(DstImage);	
+	LV_SetThreadCore(1);
+	LV_LVDTToGRImage(SrcImage, &ImgSrc); 
+	LV_LVDTToGRImage(DstImage, &ImgDst);
 
 	LV_IS_NOT_IMAGE(ImgDst, ErrorCluster);
 	LV_IS_NOT_IMAGE(ImgSrc, ErrorCluster);
@@ -112,8 +111,7 @@ extern "C" __declspec(dllexport) void opencv2PyrUp(
 
 	// apply the algorithm
 	pyrUp(src, dst, Size(LVWidth*2, LVHeight*2));
-
-}
+} //opencv2PyrUp
 
 extern "C" __declspec(dllexport) void opencv2CLAHE(
 		const void *SrcImage, void *DstImage,
