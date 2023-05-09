@@ -1,0 +1,1 @@
+-force-include-file "MP Helper.c";"c:\Users\Andrey\Desktop\xe1\HelperDLL\MP Helper.c" -force-include-file "MP Helper.h";"c:\Users\Andrey\Desktop\xe1\HelperDLL\MP Helper.h" 

@@ -1,0 +1,6 @@
+-inrc c:\Users\Andrey\Desktop\xe1\HelperDLL\cvibuild.MP Helper\Release64\resources.in.rc
+-outrc c:\Users\Andrey\Desktop\xe1\HelperDLL\cvibuild.MP Helper\Release64\resources.out.rc
+-inhdef c:\Users\Andrey\Desktop\xe1\HelperDLL\cvibuild.MP Helper\Release64\MP Helper.h.hdefs
+-outdef c:\Users\Andrey\Desktop\xe1\HelperDLL\cvibuild.MP Helper\Release64\MP Helper.dll.defs
+-indefprot c:\Users\Andrey\Desktop\xe1\HelperDLL\cvibuild.MP Helper\Release64\MP Helper.obj.cvidefprots
+-dllName MP_Helper.dll

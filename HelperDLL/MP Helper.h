@@ -1,10 +1,9 @@
 //==============================================================================
 //
 // Title:		MP Helper
-// Purpose:		A short description of the interface.
+// Purpose:		Header with exported functions
 //
-// Created on:	30.04.2023 at 18:08:18 by .
-// Copyright:	. All Rights Reserved.
+// Created on:	30.04.2023 at 18:08:18 by AD.
 //
 //==============================================================================
 
@@ -15,26 +14,17 @@
     extern "C" {
 #endif
 
-//==============================================================================
-// Include files
-
 #include "cvidef.h"
-
-//==============================================================================
-//
-// Title:       Header for Wrapper
-// Purpose:     A short description of the interface.
-//
-// Created on:  21.04.2011 at 14:45:38 by AD.
-// Copyright:   AVD. All Rights Reserved.
-//
-//==============================================================================
-
 #include <windows.h>
 #include <stdio.h>
 #include "extcode.h"
 #include "nivision.h"
 #include <utility.h>
+
+typedef uintptr_t NIImageHandle;
+
+extern "C" int LV_LVDTToGRImage(NIImageHandle niImageHandle, void *image);
+extern "C" int LV_SetThreadCore(int NumThreads);
 
 		
 #define U8		0x1
@@ -171,7 +161,6 @@ extern "C" uint8_t GGetOneErrorCode(int ErrorCode, LStrHandle* ErrStr);
 #ifndef EX_H
 #define EX_H
 
-
 Image* ADV_LVDTToAddress(const void *LVImageHdl)
 {
 	IMAQ_Image *LV_Image;
@@ -187,22 +176,18 @@ Image* ADV_LVDTToAddress(const void *LVImageHdl)
 	return ret;
 }
 
-
 int ADV_SetLVError(int ErrorCode, const char *errText, LVErrorCluster *ErrorCluster)
 {
-	int strsize, strerrsize, calldepth, len;
+	int strsize, strerrsize, len;
 	uint8_t code_ok;
 
-	TDCallChainHdl callChain;
 	LStrHandle ErrStr;
-
-	OutputDebugStringA("001");
 	
 	ErrStr = (LStrHandle)DSNewHandle(sizeof(LStr));
 	code_ok = GGetOneErrorCode(ErrorCode, &ErrStr);
 	strerrsize = (code_ok?(*ErrStr)->cnt:0);
 
-	strsize = strlen(errText);
+	strsize = (int)strlen(errText);
 
 	if (ErrorCode){
 		
@@ -284,33 +269,8 @@ int ADV_SetLVErrorWithCallChain(int ErrorCode, LVErrorCluster *ErrorCluster)
 
 #endif
 
-
-
-//==============================================================================
-// Constants
-
-//==============================================================================
-// Types
-
-//==============================================================================
-// External variables
-
-//==============================================================================
-// Global functions
-
-void ApplyTransform(void *SrcImage, double Divider, double Power, double Multiplier,  LVErrorCluster *ErrorCluster);
-void ApplyTransformP(void *SrcImage, double Divider, double Power, double Multiplier,  LVErrorCluster *ErrorCluster);
-void ApplyTransformP2(void *SrcImage, double Divider, double Power, double Multiplier,  LVErrorCluster *ErrorCluster);
-void ApplyPower(void *SrcImage, double Power, LVErrorCluster *ErrorCluster);
-void ApplyTransformL(void *SrcImage, int StartLine, int EndLine, double Divider, double Power, double Multiplier,  LVErrorCluster *ErrorCluster);
-void ApplyTransformL1(void *SrcImage, int StartLine, int EndLine, double Divider, double Power, double Multiplier,  LVErrorCluster *ErrorCluster);
-void ApplyTransformL2(void *SrcImage, int StartLine, int EndLine, double Divider, double Power, double Multiplier,  LVErrorCluster *ErrorCluster);
-int PrepareThreadPool(int NumThreads);
-int UnprepareThreadPool();
-void CastImageL(void *SrcImage, void *DstImage, int StartLine, int EndLine, double Multiplier, LVErrorCluster *ErrorCluster);
-
-
-int Your_Functions_Here (int x);
+void ApplyPower(NIImageHandle SrcImage, double Power, LVErrorCluster *ErrorCluster);
+void ApplyTransform(NIImageHandle SrcImage, int StartLine, int EndLine, double Divider, double Power, double Multiplier,  LVErrorCluster *ErrorCluster);
 
 #ifdef __cplusplus
     }

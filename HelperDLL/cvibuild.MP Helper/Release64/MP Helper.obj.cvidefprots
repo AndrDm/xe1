@@ -1,0 +1,20 @@
+[fastPow]
+Class="Function"
+Prototype="inline double fastPow(double a, double b);"
+SourceLocation="c:\Users\Andrey\Desktop\xe1\HelperDLL\MP Helper.c:12:15"
+
+[ApplyTransform]
+Class="Function"
+Prototype="void ApplyTransform(unsigned long long SrcImage, int StartLine, int EndLine, double Divider, double Power, double Multiplier, struct LVErrorCluster *ErrorCluster);"
+SourceLocation="c:\Users\Andrey\Desktop\xe1\HelperDLL\MP Helper.c:22:6"
+
+[ApplyPower]
+Class="Function"
+Prototype="void ApplyPower(unsigned long long SrcImage, double Power, struct LVErrorCluster *ErrorCluster);"
+SourceLocation="c:\Users\Andrey\Desktop\xe1\HelperDLL\MP Helper.c:70:6"
+
+[DllMain]
+Class="Function"
+Prototype="int DllMain(struct HINSTANCE__ *hinstDLL, unsigned long fdwReason, void *lpvReserved);"
+SourceLocation="c:\Users\Andrey\Desktop\xe1\HelperDLL\MP Helper.c:114:15"
+

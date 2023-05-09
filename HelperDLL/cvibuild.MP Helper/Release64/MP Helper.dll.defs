@@ -1,0 +1,8 @@
+LIBRARY MP_Helper
+
+EXPORTS
+ApplyTransform
+ApplyPower
+ADV_SetLVErrorWithCallChain
+ADV_SetLVError
+ADV_LVDTToAddress

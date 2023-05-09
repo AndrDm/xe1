@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+
+
+
+[ADV_LVDTToAddress]
+Class="Function"
+Prototype="struct Image_struct *ADV_LVDTToAddress(const void *LVImageHdl);"
+
+[ADV_SetLVError]
+Class="Function"
+Prototype="int ADV_SetLVError(int ErrorCode, const char *errText, struct LVErrorCluster *ErrorCluster);"
+
+[ADV_SetLVErrorWithCallChain]
+Class="Function"
+Prototype="int ADV_SetLVErrorWithCallChain(int ErrorCode, struct LVErrorCluster *ErrorCluster);"
+
+[ApplyPower]
+Class="Function"
+Prototype="void ApplyPower(unsigned long long SrcImage, double Power, struct LVErrorCluster *ErrorCluster);"
+
+[ApplyTransform]
+Class="Function"
+Prototype="void ApplyTransform(unsigned long long SrcImage, int StartLine, int EndLine, double Divider, double Power, double Multiplier, struct LVErrorCluster *ErrorCluster);"
+

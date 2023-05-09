@@ -1,6 +1,6 @@
 [Workspace Header]
 Version = 2000
-Pathname = "/c/Users/Andrey/Desktop/xev/HelperDLL/MP Helper.cws"
+Pathname = "/c/Users/Andrey/Desktop/xe1/HelperDLL/MP Helper.cws"
 CVI Dir = "/c/program files (x86)/national instruments/cvi2020"
 CVI Shared Dir = "/C/Program Files (x86)/National Instruments/Shared/CVI"
 CVI Pub Local Dir = "/C/ProgramData/National Instruments/CVI2020"
@@ -14,9 +14,9 @@ Active Project = 1
 Project 0001 = "MP Helper.prj"
 Drag Bar Left = 199
 Window Top = 54
-Window Left = 100
-Window Bottom = 1002
-Window Right = 1797
+Window Left = 171
+Window Bottom = 962
+Window Right = 1868
 Maximized = False
 Maximized Children = True
 Max32 Number Of Errors = 20
@@ -46,21 +46,21 @@ Batch Build Release = False
 Batch Build Debug = False
 
 [File 0001]
-Path = "/c/Users/Andrey/Desktop/xev/HelperDLL/MP Helper.c"
+Path = "/c/Users/Andrey/Desktop/xe1/HelperDLL/MP Helper.c"
 File Type = "CSource"
-Disk Date = 3765766595
+Disk Date = 3766451835
 In Projects = "1,"
-Source Window State = "1,189,189,189,16,16,16,0,0,0,0,0,0,0,0,0,192,0,189,16,401,637,1,0,"
+Source Window State = "1,105,105,105,5,5,5,0,0,0,0,0,0,0,0,0,0,0,105,5,401,637,1,0,"
 Window Top = 33
 Window Left = 10
 Window Z-Order = 1
 
 [File 0002]
-Path = "/c/Users/Andrey/Desktop/xev/HelperDLL/MP Helper.h"
+Path = "/c/Users/Andrey/Desktop/xe1/HelperDLL/MP Helper.h"
 File Type = "Include"
-Disk Date = 3765765324
+Disk Date = 3766451835
 In Projects = "1,"
-Source Window State = "1,294,294,294,18,18,18,0,0,0,0,0,0,0,0,0,269,0,294,18,326,637,1,0,"
+Source Window State = "1,5,5,5,45,45,45,0,0,0,0,0,0,0,0,0,0,0,5,45,326,637,1,0,"
 Window Top = 64
 Window Left = 26
 Window Z-Order = 2
@@ -72,14 +72,14 @@ Disk Date = 3756462866
 In Projects = "1,"
 
 [File 0004]
-Path = "/c/Users/Andrey/Desktop/xev/HelperDLL/lib/NIVisSvc.lib"
+Path = "/c/Users/Andrey/Desktop/xe1/HelperDLL/lib/NIVisSvc.lib"
 File Type = "Library"
-Disk Date = 3764339013
+Disk Date = 3766450075
 In Projects = "1,"
 
 [Tab Order]
-Tab 0001 = "/c/Users/Andrey/Desktop/xev/HelperDLL/MP Helper.c"
-Tab 0002 = "/c/Users/Andrey/Desktop/xev/HelperDLL/MP Helper.h"
+Tab 0001 = "/c/Users/Andrey/Desktop/xe1/HelperDLL/MP Helper.h"
+Tab 0002 = "/c/Users/Andrey/Desktop/xe1/HelperDLL/MP Helper.c"
 
 [Default Build Config 0001 Debug]
 Generate Browse Info = True
