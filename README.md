@@ -2,7 +2,9 @@ Some Performance Optimizations Experiments for Multiscale Transform
 
 ### Dependencies:
 
-[LabVIEW 2023 Q1 64-bit](https://www.ni.com/de-de/support/downloads/software-products/download.labview.html#477380)
+[NI LabVIEW 2023 Q1 64-bit](https://www.ni.com/de-de/support/downloads/software-products/download.labview.html#477380)
+
+[NI Vision Development Module 2023 Q1](https://www.ni.com/en-us/support/downloads/software-products/download.vision-development-module.html#477810)
 
 [OpenG Libraries for LabVIEW](https://www.ni.com/de-de/support/downloads/tools-network/download.openg-libraries-for-labview.html#379041)
 
